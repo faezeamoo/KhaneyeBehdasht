@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">سامانه همراه پزشک خانواده</string>
+    <string name="title_activity_khane_behdasht">خانه بهداشت</string>
+    <string name="title_activity_bime">بیمه</string>
+    <string name="title_drug">دارو</string>
+    <string name="title_expert">متخصص</string>
+    <string name="title_malady">بیماری</string>
+    <string name="title_new_person">فرد جدید</string>
+    <string name="title_search_person">جستجو فرد</string>
+    <string name="title_family">خانواده</string>
+    <string name="title_list_family">لیست خانواده</string>
+    <string name="title_morajee_list">لیست مراجعات</string>
+    <string name="title_morajee">مراجعه</string>
+    
+    <string name="action_settings">Settings</string>
+    <string name="action_khane_behdasht">خانه بهداشت</string>
+    <string name="action_bime">بیمه</string>
+    <string name="action_drug">دارو</string>
+    <string name="action_expert">متخصص</string>
+    <string name="action_malady">بیماری</string>
+    <string name="action_new_person">فرد جدید</string>
+    <string name="action_family">خانواده</string>
+    
+    <string name="action_delete">پاک کردن</string>
+    <string name="action_edit">ویرایش</string>
+    <string name="action_morajee">مراجعه</string>
+    
+    <string name="editText_name">نام</string>
+    <string name="editText_name_and_family">نام و نام خانوادگی</string>
+    <string name="editText_national_code">کد ملی</string>
+    <string name="editText_father_code">کد ملی پدر</string>
+    <string name="editText_mother_code">کد ملی مادر</string>
+    <string name="editText_bime_number">شماره بیمه نامه</string>
+    <string name="editText_date">تاریخ</string>
+    <string name="editText_seeing">مشاهده</string>
+    <string name="editText_tajviz">تجویز</string>
+    
+    <string name="button_add">اضافه کرده</string>
+    <string name="button_ok">تایید</string>
+    <string name="button_yes">بله</string>
+    <string name="button_no">خیر</string>
+    <string name="button_select_family">انتخاب خانواده</string>
+    <string name="button_select">انتخاب</string>
+    <string name="button_father_select">انتخاب سرپرست</string>
+    
+    <string name="checkBox_is_alive">زنده</string>
+    
+    <string name="message_delete">آیا مطمئن هستید ؟</string>
+    <string name="message_father_length_is_short">طول کد پدر کوتاه است.</string>
+    <string name="message_mother_length_is_short">طول کد مادر کوتاه است.</string>
+    <string name="message_name_and_family_is_required">وارد کردن اسم و فامیل ضروری است.</string>
+    <string name="message_national_code_is_required">وارد کردن کد ملی ضروری است.</string>
+    <string name="message_national_length_is_short">طول کد ملی کوتاه است.</string>
+    <string name="message_national_isnt_unique">کد ملی منحصر به فرد نیست.</string>
+    <string name="message_bime_must_be_specified">لطفا بیمه ها را تعیین کنید.</string>
+    <string name="message_khane_behdasht_must_be_specified">لطفا خانه بهداشت ها را تعیین کنید.</string>
+    <string name="message_family_not_found">خانواده ای با این سرپرست وجود ندارد.</string>
+    <string name="message_date_test">تاریخ باید درست باشد برای نمونه
+1370/12/12</string>
+</resources>

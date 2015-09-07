@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.simplegroup.khanebehdasht.MainActivity" >
+    
+    <item android:id="@+id/action_khane_behdasht" android:title="@string/action_khane_behdasht" android:orderInCategory="100"></item>
+    <item android:id="@+id/action_bime" android:orderInCategory="101" android:title="@string/action_bime"></item>
+    <!-- <item android:id="@+id/action_drug" android:orderInCategory="102" android:title="@string/action_drug"></item>
+    --><!-- 
+    <item android:id="@+id/action_expert" android:orderInCategory="103" android:title="@string/action_expert"></item>
+     -->
+    <item android:id="@+id/action_malady" android:orderInCategory="104" android:title="@string/action_malady"></item>
+    <item android:id="@+id/action_new_person" android:orderInCategory="105" android:title="@string/action_new_person"></item>
+	<item android:id="@+id/action_family" android:orderInCategory="106" android:title="@string/action_family"></item>
+</menu>

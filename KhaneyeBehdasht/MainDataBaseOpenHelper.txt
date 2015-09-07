@@ -1,0 +1,190 @@
+/*
+i need to change this class to static because i cann't send
+my  database  class from an activity to other activity so i
+must  change it to a a global class to use everywhere but i
+save it here for necessary times.
+30-7-2015 : MAKH
+
+*/
+
+package com.simplegroup.khanebehdasht.models;
+
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Environment;
+import android.util.Log;
+
+public class MainDatabaseOpenHelper
+{	
+/* ##################
+ * ### Attributes ###
+ * ##################
+ */
+	// Constant
+	private final String DATABASE_NAME = "KhaneBehdashtDB";
+	private final String DATA_PATH = Environment.getDataDirectory() + "/data/";
+	
+	// Variable
+	private SQLiteDatabase db;
+	
+/* #####################
+ * ### basic Methods ###
+ * #####################
+ */
+	// Constructor
+	public MainDatabaseOpenHelper(Context context)
+	{
+		// MAKH :
+		// this statement open database and if couldn't find database file create a new database file.
+		// and if there is other problem throw an exception in log cat with a tag equal database name.
+		try {
+			Log.d(DATABASE_NAME, DATA_PATH + context.getPackageName() + "/" + DATABASE_NAME);
+			db = SQLiteDatabase.openDatabase(DATA_PATH + context.getPackageName() + "/" + DATABASE_NAME, null, SQLiteDatabase.CREATE_IF_NECESSARY);
+		} catch (Exception e) {
+			Log.e(DATABASE_NAME, e.getMessage());
+		}
+		
+		// call onCreate function.
+		onCreate(db);
+	}
+
+	// this function was public MAKH change it to private for security reason.
+	private void onCreate(SQLiteDatabase db)
+	{
+		// All Table Creations Calls Here
+		createBimeTable(db);
+		createDrugTable(db);
+		createExpertTable(db);
+		createKhaneBehdashtTable(db);
+		createMaladyTable(db);
+	}
+	
+	// MAKH : this function return a SQLitedatabase for other model classes.
+	public SQLiteDatabase getWritableDatabase()
+	{
+		return db;
+	}
+
+/* ############################################################	
+ * ### there are tables create and drop functions in below. ###
+ * ############################################################
+ */
+	// bime
+	private void createBimeTable(SQLiteDatabase db)
+	{
+		String sqlExperssion = 
+				"CREATE TABLE IF NOT EXISTS Bime (" +
+				"Code INTEGER PRIMARY KEY," +
+				"Name TEXT," +
+				"IsAvailable BOOLEAN" +
+				")";
+		try {
+			db.execSQL(sqlExperssion);
+		} catch (Exception e) {
+			Log.w(DATABASE_NAME, e.getMessage());
+		}
+	}
+	
+	private void dropBimeTable(SQLiteDatabase db)
+	{
+		String sqlCommand = "";
+		try {
+			db.execSQL(sqlCommand);
+		} catch (Exception e) {
+			Log.w(DATABASE_NAME, e.getMessage());
+		}
+	}
+		
+	// khane behdasht
+	private void createKhaneBehdashtTable(SQLiteDatabase db)
+	{
+		String sqlExperssion = 
+				"CREATE TABLE IF NOT EXISTS KhaneBehdasht (" +
+				"Code INTEGER PRIMARY KEY AUTOINCREMENT," +
+				"Name TEXT," +
+				"IsAvailable BOOLEAN" +
+				")";
+		try {
+			db.execSQL(sqlExperssion);
+		} catch (Exception e) {
+			Log.w(DATABASE_NAME, e.getMessage());
+		}
+	}
+	
+	// drug
+	private void createDrugTable(SQLiteDatabase db)
+	{
+		String sqlExperssion = 
+				"CREATE TABLE IF NOT EXISTS Drug (" +
+				"Code INTEGER PRIMARY KEY AUTOINCREMENT," +
+				"Name TEXT," +
+				"IsAvailable BOOLEAN" +
+				")";
+		try {
+			db.execSQL(sqlExperssion);
+		} catch (Exception e) {
+			Log.w(DATABASE_NAME, e.getMessage());
+		}
+	}
+	
+	// expert
+	private void createExpertTable(SQLiteDatabase db)
+	{
+		String sqlExperssion = 
+				"CREATE TABLE IF NOT EXISTS Expert (" +
+				"Code INTEGER PRIMARY KEY AUTOINCREMENT," +
+				"FirstName TEXT," +
+				"LastName TEXT," +
+				"IsAvailable BOOLEAN" +
+				")";
+		try {
+			db.execSQL(sqlExperssion);
+		} catch (Exception e) {
+			Log.w(DATABASE_NAME, e.getMessage());
+		}
+	}
+	
+	// malady
+	private void createMaladyTable(SQLiteDatabase db)
+	{
+		String sqlExperssion = 
+				"CREATE TABLE IF NOT EXISTS Malady (" +
+				"Code INTEGER PRIMARY KEY AUTOINCREMENT," +
+				"Name TEXT," +
+				"IsAvailable BOOLEAN" +
+				")";
+		try {
+			db.execSQL(sqlExperssion);
+		} catch (Exception e) {
+			Log.w(DATABASE_NAME, e.getMessage());
+		}
+	}
+	
+	// TODO: at the next i must to create a model for this entity.
+	private void createPersonTable(SQLiteDatabase db)
+	{
+		String sqlExperssion =
+				"CREATE TABLE IF NOT EXISTS Person (" +
+				"FirstName TEXT," +
+				"LastName TEXT," +
+				"NationalCode TEXT PRIMARY KEY," +
+				"FatherCode TEXT," +
+				"MotherCode TEXT," +
+				"FamilyCode INTEGER," +
+				"BimeCode INTEGER," +
+				"PolicyCode TEXT," +
+				"IsAlive BOOLEAN" +
+				")"; 
+		try {
+			db.execSQL(sqlExperssion);
+		} catch (Exception e) {
+			Log.w(DATABASE_NAME, e.getMessage());
+		}
+	}
+
+/* ###################################################
+ * ### end of the entity create and drop functions. ###
+ * ###################################################
+ */
+	
+}
