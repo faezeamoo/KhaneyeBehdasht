@@ -16,7 +16,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name="com.simplegroup.khanebehdasht.KhaneBehdashtActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,10 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".KhaneBehdashtActivity"
-            android:label="@string/title_activity_khane_behdasht" >
-        </activity>
+       
         <activity android:name=".BimeActivity" android:label="@string/title_activity_bime"></activity>
         <activity android:name=".DrugActivity" android:label="@string/title_drug"></activity>
         <activity android:name=".ExpertActivity" android:label="@string/title_expert"></activity>
